@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clearway</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Syncopate:wght@700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* palette: Ink Navy #1B2A3D, Parchment Cream #EDE3C8, Burgundy Leather #5C1F2E
+     status colours kept separate: final = green, open = amber, withdrawn = red */
+  color-scheme:light;
+  --bg:#EDE3C8; --panel:#F7F1E2; --ink:#1B2A3D; --muted:#5B6472; --line:#D3C5A3;
+  --accent:#1B2A3D; --brand2:#5C1F2E; --btnink:#EDE3C8;
+  --ok:#1B2A3D; --okbg:#E4DAC0; --warn:#8A5A0B; --warnbg:#F6E2B3;
+  --bad:#5C1F2E; --badbg:#EBD3CF; --info:#1B2A3D; --infobg:#E4DAC0; --hl:#EBC7C5;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --sans: "Nunito", ui-rounded, "SF Pro Rounded", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --display: "Anton", "Bebas Neue", Impact, "Arial Narrow Bold", sans-serif;
+  --final:#2E7D57; --finalbg:#D7EAD9; --red:#C0281C; --redbg:#F5D6CF;
+  --sketch:#1B2A3D; --sketch2:#5C1F2E; --shadow:0 2px 0 rgba(27,42,61,.04), 0 10px 30px rgba(27,42,61,.08);
+}
+*{box-sizing:border-box}
+.hero{display:none;text-align:center;margin:10px 0 26px}
+.hero h1{font:700 36px/1.15 var(--sans);letter-spacing:-.02em;margin:0 0 10px;color:var(--ink);text-wrap:balance}
+.hero p{margin:0 auto;color:var(--muted);font-size:16.5px;max-width:58ch;text-wrap:pretty}
+body.landing header{border-bottom:0;background:transparent}
+body.landing header .wrap{max-width:820px;padding-top:15vh;padding-bottom:10vh}
+body.landing .top{justify-content:center;padding:0 0 4px}
+body.landing .brand{font-size:24px}
+body.landing .hero{display:block}
+body.landing .tabs{justify-content:center;border-bottom:0;margin-bottom:14px}
+body.landing form{gap:10px}
+body.landing input{font-size:17px;padding:16px 18px;border-radius:10px;background:var(--panel)}
+body.landing form button{padding:16px 26px;border-radius:10px;font-size:16px}
+body.landing #f{grid-template-columns:1fr 1fr auto}
+body.landing #f #q{grid-column:1/-1}
+body.landing main{display:none}
+@media (max-width:600px){ .hero h1{font-size:28px} body.landing header .wrap{padding-top:8vh} }
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 var(--sans)}
+header{border-bottom:1px solid var(--line);background:var(--panel)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 16px}
+.top{display:flex;align-items:baseline;gap:14px;padding:14px 0;flex-wrap:wrap}
+.brand{font-weight:700;font-size:19px;letter-spacing:-.01em}
+.brand span{color:var(--brand2)}
+.tag{color:var(--muted);font-size:13px}
+form{display:grid;grid-template-columns:1fr 150px 150px auto;gap:8px;padding:0 0 16px}
+form[hidden]{display:none}
+form.two{grid-template-columns:1fr 200px auto} form.one,#ff{grid-template-columns:1fr auto}
+.tabs{display:flex;gap:2px;margin:0 0 10px;border-bottom:1px solid var(--line);overflow-x:auto}
+.tabs button{background:none;color:var(--muted);border:0;border-bottom:3px solid transparent;border-radius:0;padding:8px 12px;font:600 14px var(--sans);white-space:nowrap}
+.tabs button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--accent)}
+.counts{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 4px}
+.count{border:1px solid var(--line);border-radius:6px;padding:6px 12px;font-size:13px;background:var(--bg)}
+.count b{display:block;font-size:20px;line-height:1.2}
+.b-applies{color:var(--ok)} .b-does_not{color:var(--muted)} .b-unknown{color:var(--warn)} .b-withdrawn{color:var(--bad)}
+input{font:15px var(--sans);padding:10px 12px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);min-width:0}
+input:focus{outline:2px solid var(--accent);outline-offset:-1px}
+button{font:600 14px var(--sans);padding:10px 18px;border:0;border-radius:6px;background:var(--accent);color:var(--btnink);cursor:pointer}
+
+main{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:18px;padding:18px 0 40px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin-bottom:14px}
+.status{display:inline-block;font:700 11px var(--mono);letter-spacing:.08em;padding:3px 8px;border-radius:4px;text-transform:uppercase}
+.s-answer{background:var(--okbg);color:var(--ok)} .s-refuse{background:var(--badbg);color:var(--bad)}
+.s-list{background:var(--infobg);color:var(--info)}
+.s-clarify,.s-partial{background:var(--warnbg);color:var(--warn)}
+.meta{color:var(--muted);font-size:12.5px;margin-top:4px}
+.mono{font-family:var(--mono);font-size:12.5px}
+h2{font-size:16px;margin:10px 0 2px;line-height:1.35}
+h3{font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:16px 0 8px}
+.banner{padding:10px 12px;border-radius:6px;margin:12px 0 0;font-size:14px}
+.b-critical{background:var(--badbg);color:var(--bad);font-weight:600}
+.b-warn{background:var(--warnbg);color:var(--warn)} .b-info{background:var(--infobg);color:var(--info)}
+.verdict{border:1px solid var(--line);border-left-width:4px;border-radius:6px;padding:10px 12px;margin-top:4px}
+.v-APPLIES{border-left-color:var(--ok)} .v-DOES{border-left-color:var(--muted)}
+.v-CANNOT,.v-NEED,.v-DEPENDS{border-left-color:var(--warn)} .v-NOT{border-left-color:var(--bad)}
+.vtitle{font:700 14px var(--mono)}
+.rules{font:12px var(--mono);color:var(--muted);margin:6px 0 0;padding-left:16px}
+.ev{list-style:none;padding:0;margin:0}
+.ev li{padding:10px 0;border-top:1px solid var(--line)}
+.ev li:first-child{border-top:0}
+.quote{margin:0 0 4px}
+.cite{font:12px var(--mono);color:var(--accent);background:none;border:0;padding:0;cursor:pointer;text-align:left}
+.cite:hover{text-decoration:underline}
+.timeline{display:flex;gap:0;flex-wrap:wrap;margin-top:4px}
+.ver{font:12px var(--mono);padding:6px 10px;border:1px solid var(--line);margin:-1px 0 0 -1px;background:var(--bg)}
+.ver b{display:block;font-family:var(--sans);font-size:12px}
+.ver.withdrawal b{color:var(--bad)} .ver.cur{outline:2px solid var(--accent);position:relative}
+.cands{list-style:none;padding:0;margin:0}
+.cands li{padding:10px 0;border-top:1px solid var(--line)}
+.cands li:first-child{border-top:0}
+button.pick{background:transparent;color:var(--accent);border:1px solid var(--line);padding:4px 10px;font-size:12px;margin-top:6px}
+.foot{display:flex;gap:14px;flex-wrap:wrap;font:12px var(--mono);color:var(--muted);margin-top:12px;padding-top:10px;border-top:1px dashed var(--line)}
+.okc{color:var(--ok)} .badc{color:var(--bad)}
+aside .card{position:sticky;top:12px;max-height:calc(100vh - 24px);overflow:auto}
+.src p{margin:0 0 10px;font-size:13.5px}
+mark{background:var(--hl);color:inherit;padding:0 1px}
+.sec{font:11px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:10px}
+.empty{color:var(--muted);font-size:14px}
+.confnote{font-size:13px;color:var(--muted);margin:12px 0 0;padding:8px 12px;border-radius:6px;background:var(--bg);border:1px solid var(--line)}
+.confnote b{color:var(--ink)}
+.h3note{text-transform:none;letter-spacing:0;font-weight:400}
+details{margin-top:10px} summary{cursor:pointer;color:var(--muted);font-size:13px}
+table{border-collapse:collapse;width:100%;font-size:12.5px}
+td,th{border-top:1px solid var(--line);padding:5px 6px;text-align:left;vertical-align:top}
+a{color:var(--accent)}
+.fcounts{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 10px;align-items:stretch}
+.ftotal{border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-size:13px;background:var(--panel)}
+.ftotal b,.fchip b{display:block;font-size:22px;line-height:1.15}
+.fchip{border:1px solid var(--line);border-radius:8px;padding:8px 12px;font:13px var(--sans);background:var(--bg);cursor:pointer;text-align:left;color:var(--ink)}
+.fchip:disabled{opacity:.45;cursor:default}
+.fchip.f-ok b{color:var(--ok)} .fchip.f-warn b{color:var(--warn)} .fchip.f-bad b{color:var(--bad)} .fchip.f-info b{color:var(--info)} .fchip.f-no b{color:var(--muted)}
+.folder{border:1px solid var(--line);border-radius:8px;margin:0 0 10px;background:var(--panel);border-left:5px solid var(--line)}
+.folder.f-ok{border-left-color:var(--ok)} .folder.f-warn{border-left-color:var(--warn)} .folder.f-bad{border-left-color:var(--bad)} .folder.f-info{border-left-color:var(--info)} .folder.f-no{border-left-color:var(--muted)}
+.folder summary{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;cursor:pointer;font:600 15px var(--sans);list-style:none}
+.folder summary::-webkit-details-marker{display:none}
+.folder summary:after{content:"▸";color:var(--muted);margin-left:10px} .folder[open] summary:after{content:"▾"}
+.fcount{margin-left:auto;font:700 13px var(--mono);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:2px 10px}
+.fbody{padding:0 14px 6px}
+.item{padding:12px 0;border-top:1px solid var(--line)}
+.ihead{font-size:13px;color:var(--muted);margin-bottom:2px} .ihead b{color:var(--ink)}
+.iverdict{font-size:14px;margin:6px 0 2px}
+.istatus{font-size:14px;margin:6px 0 2px;padding:6px 10px;border-radius:6px;background:var(--bg)}
+.ianswer{font:600 17px/1.45 var(--sans);margin:6px 0 8px} .ianswer.muted{font-weight:400;font-size:14px;color:var(--muted)}
+.iextra{display:block;margin-top:4px}
+.vers{margin:10px 0 2px;border:1px solid var(--line);border-radius:8px;background:var(--bg)}
+.vers summary{cursor:pointer;padding:8px 12px;font:600 13px var(--sans);color:var(--muted)}
+.vlist{list-style:none;margin:0;padding:0 12px 6px 22px;border-left:2px solid var(--line);margin-left:16px}
+.vlist li{position:relative;padding:8px 0 10px}
+.vlist li:before{content:"";position:absolute;left:-29px;top:13px;width:10px;height:10px;border-radius:50%;background:var(--panel);border:2px solid var(--accent)}
+.vlist li.k-withdrawal:before{background:var(--bad);border-color:var(--bad)}
+.vlist li.cur .vh b{color:var(--ink)} .vlist li:not(.cur){opacity:.8}
+.vh{font-size:13px;color:var(--muted)} .vq{font-size:14px;margin:4px 0 2px}
+.p-cur{background:var(--okbg);color:var(--ok)} .vold{font-size:12px}
+.iactions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:6px} .iactions .pick{margin-top:0}
+.istatus.s-final{background:var(--okbg)} .istatus.s-open{background:var(--infobg)} .istatus.s-withdrawn{background:var(--badbg)}
+.item .quote{font-size:14px;margin:6px 0 2px}
+.item .pick{margin-top:8px}
+.back{background:transparent;color:var(--accent);border:1px solid var(--line);padding:5px 12px;font:600 13px var(--sans);margin:0 0 12px;border-radius:6px}
+.back:hover{border-color:var(--accent)}
+.headline{border-radius:8px;padding:14px 16px;margin:12px 0 4px;border-left:6px solid}
+.headline .ht{font:700 21px/1.3 var(--sans);margin:0}
+.headline .hs{font-size:15px;margin:6px 0 0}
+.headline .hq{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--line);font-size:14px}
+.headline .hq .quote{margin:0 0 2px}
+.h-ok{background:var(--okbg);border-color:var(--ok)} .h-ok .ht{color:var(--ok)}
+.h-bad{background:var(--badbg);border-color:var(--bad)} .h-bad .ht{color:var(--bad)}
+.h-warn{background:var(--warnbg);border-color:var(--warn)} .h-warn .ht{color:var(--warn)}
+.h-info{background:var(--infobg);border-color:var(--info)} .h-info .ht{color:var(--info)}
+.h-no{background:var(--bg);border-color:var(--muted)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+.cmp > div{border:1px solid var(--line);border-radius:6px;padding:10px 12px;background:var(--bg)}
+.cmp .lab{font:700 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.cmp .why{grid-column:1/-1}
+.cmp .ev li{padding:6px 0}
+.lt td{padding:8px 6px} .lt .mono{white-space:nowrap}
+.pill{font:700 10.5px var(--mono);padding:2px 6px;border-radius:4px;letter-spacing:.04em}
+.p-WITHDRAWN{background:var(--badbg);color:var(--bad)} .p-FINAL{background:var(--okbg);color:var(--ok)} .p-REVISED{background:var(--warnbg);color:var(--warn)} .p-SINGLE{background:var(--infobg);color:var(--info)}
+.vsteps{list-style:none;padding:0;margin:0;border-left:2px solid var(--line)}
+.vsteps li{padding:6px 0 10px 14px;position:relative}
+.vsteps li:before{content:"";position:absolute;left:-6px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--panel);border:2px solid var(--accent)}
+.vsteps li.withdrawal:before{border-color:var(--bad);background:var(--bad)}
+@media (max-width:900px){ .cmp{grid-template-columns:1fr} .lt td:nth-child(3),.lt th:nth-child(3){display:none} }
+@media (max-width:900px){ main{grid-template-columns:minmax(0,1fr)} form,form.two{grid-template-columns:1fr 1fr} form input:first-child{grid-column:1/-1} form.one,#ff{grid-template-columns:1fr auto} form.one input:first-child,#ff input:first-child{grid-column:auto} aside .card{position:static;max-height:none} }
+/* ---- Bubbly, spaced-out results ---- */
+body{font-size:16px;line-height:1.6}
+header{background:var(--bg);border-bottom:0}
+.top{padding:20px 0 10px}
+.brand{font-size:22px;font-weight:800}
+.tabs{border-bottom:0;gap:6px;margin:0 0 14px}
+.tabs button{border:0;border-radius:999px;padding:8px 18px;font:700 14.5px var(--sans);color:var(--muted)}
+.tabs button[aria-selected=true]{background:var(--accent);color:var(--btnink)}
+input{border-radius:14px;padding:12px 16px;background:var(--panel);border:1.5px solid var(--line);font-family:var(--sans)}
+form button{border-radius:14px}
+main{gap:28px;padding:28px 0 64px}
+.card{border:0;border-radius:24px;padding:28px 30px;margin-bottom:18px;box-shadow:var(--shadow)}
+.status{display:none}
+.back{border-radius:999px;font-family:var(--sans)}
+h2{font-size:20px;font-weight:800;margin:4px 0 6px}
+h3{text-transform:none;letter-spacing:0;font:800 16px var(--sans);color:var(--ink);margin:28px 0 12px}
+.h3note{color:var(--muted);font-weight:600;font-size:13.5px;margin-left:6px}
+.meta,.meta.mono{font-family:var(--sans);font-size:13.5px}
+.headline{border:0;border-radius:20px;padding:22px 24px;margin:4px 0 10px}
+.headline .ht{font:800 24px/1.3 var(--sans)}
+.headline .hs{font-size:16px}
+.headline .hq{border-top:0;margin-top:14px;padding:14px 16px;background:var(--panel);border-radius:14px}
+.banner{border-radius:14px;padding:12px 16px}
+.confnote{border:0;border-radius:14px;background:var(--infobg);color:var(--info);padding:10px 16px;margin:16px 0 0}
+.fcounts{gap:12px;margin:18px 0 26px}
+.ftotal,.fchip{border:0;border-radius:18px;padding:12px 18px;background:var(--bg);font-family:var(--sans)}
+.ftotal b,.fchip b{font-weight:800}
+.folder{border:0;border-radius:0;background:transparent;margin:0 0 22px}
+.folder summary{padding:6px 2px 12px;font:800 18px var(--sans)}
+.folder summary:after{display:none}
+.dot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:10px;background:var(--line);vertical-align:1px}
+.folder.f-ok .dot{background:var(--ok)} .folder.f-info .dot{background:#FFB162} .folder.f-bad .dot{background:var(--bad)}
+.fcount{border:0;background:var(--bg);font:800 13px var(--sans);padding:3px 12px}
+.fbody{padding:0}
+.item{border-top:0;background:var(--bg);border-radius:20px;padding:20px 22px;margin:0 0 14px}
+.ihead{font-size:13.5px;margin-bottom:6px}
+.ihead .mono{font-family:var(--sans);font-weight:800}
+.ianswer{font:700 18px/1.5 var(--sans);margin:4px 0 12px}
+.istatus{border-radius:12px;padding:9px 14px;font-size:15px}
+.iactions{margin-top:12px;gap:10px}
+.cite{font:600 12.5px var(--sans);background:var(--panel);border-radius:999px;padding:5px 12px;color:var(--accent)}
+.cite:hover{text-decoration:none;outline:1.5px solid var(--line)}
+button.pick{border-radius:999px;font-family:var(--sans);padding:5px 14px;background:var(--panel)}
+.vers{border:0;border-radius:14px;background:var(--panel);margin-top:14px}
+.ev li{border-top:0;background:var(--bg);border-radius:16px;padding:16px 18px;margin:0 0 12px}
+.ev li:first-child{border-top:0}
+.quote{font-size:15.5px}
+.verdict{border:0;border-radius:18px;background:var(--bg);padding:18px 20px}
+.vtitle{font:800 15px var(--sans)}
+.rules{display:none}
+.cmp > div{border:0;border-radius:16px}
+.cmp .lab{font:800 13.5px var(--sans);text-transform:none;letter-spacing:0}
+aside .card{border-radius:24px}
+.sec{font:700 13px var(--sans);text-transform:none;letter-spacing:0;margin:14px 0 6px}
+.src p{font-size:15px;line-height:1.7}
+mark{border-radius:4px;padding:1px 3px}
+.empty{font-size:15px}
+/* ---- Landing sketches ---- */
+.sketch{position:absolute;pointer-events:none;display:none;fill:none;stroke:var(--sketch);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sketch .acc{stroke:var(--sketch2)}
+.sketch .trail{stroke-dasharray:2 9;opacity:.6}
+body.landing header .wrap{position:relative}
+@media (min-width:1000px){ body.landing .sketch{display:block} }
+.sk-plane{width:300px;right:-250px;top:6vh;transform:rotate(-6deg)}
+.sk-heli{width:250px;left:-240px;top:calc(15vh + 210px)}
+/* ---- Centred single column ---- */
+.wrap{max-width:860px}
+main{display:block;padding:28px 0 64px}
+.top{justify-content:center}
+.tabs{justify-content:center}
+.srcpop{margin-top:12px;background:var(--panel);border-radius:16px;padding:14px 18px}
+.srcpop p{margin:6px 0 0;font-size:15px;line-height:1.7}
+/* ---- Status colours: final = green, open = amber, withdrawn = red ---- */
+.folder.f-ok .dot{background:var(--final)} .fchip.f-ok b{color:var(--final)}
+.istatus.s-final{background:var(--finalbg)}
+.folder.f-info .dot{background:#FFB162} .fchip.f-info b{color:var(--warn)} .istatus.s-open{background:var(--warnbg)}
+.folder.f-bad .dot{background:var(--red)} .fchip.f-bad b{color:var(--red)} .istatus.s-withdrawn{background:var(--redbg)}
+.p-WITHDRAWN{background:var(--redbg);color:var(--red)} .h-bad{background:var(--redbg);border-color:var(--red)} .h-bad .ht{color:var(--red)}
+.vlist li.k-withdrawal:before{background:var(--red);border-color:var(--red)}
+/* ---- Display font for headings (Anton: tall, condensed, heavy) ---- */
+.brand,.hero h1,h2,h3,.headline .ht,.folder summary,.ftotal b,.fchip b,.vtitle{font-family:var(--display);font-weight:400;letter-spacing:.01em}
+.brand{font-size:26px} body.landing .brand{font-size:30px}
+.hero h1{font-size:48px;line-height:1.08;font-weight:400}
+h2{font-size:24px} h3{font-size:19px}
+.headline .ht{font-size:28px;line-height:1.2}
+.folder summary{font-size:21px}
+.ftotal b,.fchip b{font-size:26px}
+.h3note{font-family:var(--sans)}
+.tabs button[aria-selected=true]{background:var(--ink);color:var(--btnink)}
+form button{background:var(--brand2);color:var(--btnink)}
+a,.cite{color:var(--brand2)}
+.confnote{background:var(--infobg);color:var(--ink)}
+@media (max-width:600px){ .hero h1{font-size:34px} }
+/* ---- Stronger amber for "Not in effect" ---- */
+.istatus.s-open{background:#F2C14E;color:#1B2A3D}
+.istatus.s-open b{color:#1B2A3D}
+/* ---- Logo in its own typeface (wide, extended) ---- */
+.brand{font-family:"Syncopate","Michroma","Arial Black",sans-serif;font-weight:700;letter-spacing:.06em;font-size:22px}
+body.landing .brand{font-size:28px}
+/* ---- Sketches on the results page too ---- */
+header .wrap{position:relative}
+@media (min-width:1240px){
+  body:not(.landing) .sketch{display:block}
+  body:not(.landing) .sk-plane{width:200px;right:-215px;top:14px;transform:rotate(-6deg)}
+  body:not(.landing) .sk-heli{width:170px;left:-195px;top:26px}
+}
+</style>
+</head>
+<body class="landing">
+<header><div class="wrap">
+  <div class="top"><div class="brand">Clear<span>way</span></div></div>
+  <svg class="sketch sk-plane" viewBox="0 0 330 150" aria-hidden="true">
+    <path class="trail" d="M8 120 C 60 132, 120 128, 170 112"/>
+    <path d="M30 78 C30 70 48 64 78 64 L252 64 C276 64 300 71 310 78 C300 86 280 92 252 92 L78 92 C48 92 30 86 30 78 Z"/>
+    <path d="M52 66 L34 28 L56 28 L88 64"/>
+    <path d="M40 80 L20 90 L50 88"/>
+    <path d="M160 86 L128 122 L148 122 L206 88"/>
+    <ellipse class="acc" cx="160" cy="104" rx="20" ry="7"/>
+    <path class="acc" d="M282 70 L296 73 L300 78 L284 78 Z"/>
+    <path d="M110 66 L110 90"/>
+    <g class="acc"><circle cx="128" cy="75" r="2.5"/><circle cx="146" cy="75" r="2.5"/><circle cx="164" cy="75" r="2.5"/><circle cx="182" cy="75" r="2.5"/><circle cx="200" cy="75" r="2.5"/><circle cx="218" cy="75" r="2.5"/><circle cx="236" cy="75" r="2.5"/><circle cx="254" cy="75" r="2.5"/></g>
+  </svg>
+  <svg class="sketch sk-heli" viewBox="0 0 310 180" aria-hidden="true">
+    <path d="M28 46 C 90 40, 190 40, 258 46"/>
+    <circle class="acc" cx="142" cy="44" r="4.5"/>
+    <path d="M142 48 L142 60"/>
+    <path d="M120 64 C124 54 158 52 166 64"/>
+    <path d="M62 112 C52 84 82 64 120 64 L172 66 C192 68 198 84 198 98 L198 114 C198 122 190 126 180 126 L86 126 C72 126 64 122 62 112 Z"/>
+    <path class="acc" d="M70 104 C68 88 84 74 110 72 L112 102 Z"/>
+    <path d="M198 86 L282 94 L282 100 L198 108"/>
+    <path d="M272 94 L288 70 L294 70 L286 98"/>
+    <circle class="acc" cx="290" cy="72" r="13"/>
+    <path d="M102 126 L98 144 M172 126 L176 144"/>
+    <path d="M72 140 C74 146 80 146 86 146 L196 146"/>
+    <path class="trail" d="M300 150 C 250 168, 200 172, 150 166"/>
+  </svg>
+  <div class="hero">
+    <h1>Know which airworthiness directives apply to your aircraft</h1>
+    <p>Search FAA airworthiness directive proposals by model, serial number or docket. Every answer is quoted from the official text, or clearly marked when it can't be confirmed.</p>
+  </div>
+  <nav class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-tab="ask">Ask</button>
+    <button role="tab" aria-selected="false" data-tab="find">Find</button>
+    <button role="tab" aria-selected="false" data-tab="check">Check applicability</button>
+    <button role="tab" aria-selected="false" data-tab="history">Revision history</button>
+  </nav>
+  <form id="f" class="tabform" data-tab="ask">
+    <input id="q" placeholder="Ask about an AD, e.g. ‘DHC-8-400 horizontal stabilizer shims’" autocomplete="off">
+    <input id="model" placeholder="Model (optional)">
+    <input id="serial" placeholder="Serial no. (optional)">
+    <button>Search</button>
+  </form>
+  <form id="ff" class="tabform" data-tab="find" hidden>
+    <input id="fq" placeholder="Model or manufacturer, e.g. 737-800, A320, PW4077, Robinson" autocomplete="off">
+    <button>List every AD</button>
+  </form>
+  <form id="fc" class="tabform two" data-tab="check" hidden>
+    <input id="cm" placeholder="Exact model, e.g. DHC-8-400" autocomplete="off">
+    <input id="cs" placeholder="Serial no. (optional)">
+    <button>Check</button>
+  </form>
+  <form id="fh" class="tabform one" data-tab="history" hidden>
+    <input id="hq" placeholder="Docket (e.g. 2000-NM-120-AD) or AD number (e.g. 2026-09-02)" autocomplete="off">
+    <button>Show history</button>
+  </form>
+</div></header>
+<div class="wrap"><main>
+  <section id="out"><div class="card empty">Ask a question about an airworthiness directive. Every sentence shown is quoted from a source document and checked against it.</div></section>
+</main></div>
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+$("#f").onsubmit = e => { e.preventDefault(); run(); };
+function showTab(t){
+  document.querySelectorAll(".tabs button").forEach(b=>b.setAttribute("aria-selected", b.dataset.tab===t));
+  document.querySelectorAll(".tabform").forEach(f=>f.hidden = f.dataset.tab!==t);
+}
+document.querySelector(".tabs").onclick = e => { const b = e.target.closest("button"); if(b) showTab(b.dataset.tab); };
+$("#ff").onsubmit = e => { e.preventDefault(); const v = $("#fq").value.trim(); if(!v) return; run(`List all ADs for ${v}`); };
+$("#fh").onsubmit = e => { e.preventDefault(); const v = $("#hq").value.trim(); if(!v) return;
+  run(/^\d{4}-\d{2}-\d{2}$/.test(v) ? `Which proposal supersedes AD ${v}?` : `What does docket ${v} require?`); };
+$("#fc").onsubmit = e => { e.preventDefault(); doCheck(false); };
+async function doCheck(restoring){
+  const m = $("#cm").value.trim(); if(!m) return;
+  if(!restoring){
+    const st = {kind:"check", model:m, serial:$("#cs").value.trim()};
+    if(window._hasView){ history.pushState({...st, depth: depth + 1}, ""); depth++; } else { history.replaceState({...st, depth: 0}, ""); }
+    window._hasView = true;
+  }
+  document.body.classList.remove("landing");
+  $("#out").innerHTML = `<div class="card empty">Checking…</div>`; resetSrc();
+  const r = await (await fetch("/api/check?" + new URLSearchParams({model:m, serial:$("#cs").value.trim()}))).json();
+  renderCheck(r);
+}
+function resetSrc(){}
+function renderCheck(r){
+  let h = `<div class="card">${backBtn()}<div><span class="status s-${r.status==="refuse"?"refuse":"list"}">${r.status==="refuse"?"Refused":"Applicability check"}</span></div><p style="margin:10px 0 0">${esc(r.reason)}</p>`;
+  if(r.list) h += folders(r.list, {model: r.model, serial: r.serial, totalLabel: `directives list ${r.model}`});
+  $("#out").innerHTML = h + `</div>`;
+}
+function citeBtn(c, text){
+  const label = `${c.record_id || c.doc} · ${c.fr_cite || c.citation}${c.page ? `, p. ${c.page}` : ""} · ${c.section}`;
+  return `<button class="cite" data-cid="${esc(c.chunk)}" data-text="${esc(text)}">[${esc(label)}]</button>`;
+}
+function evList(items){
+  if(!items || !items.length) return "";
+  return `<ul class="ev">${items.map(e=>`<li><p class="quote">“${esc(e.text)}”</p>${citeBtn(e.cite, e.text)}</li>`).join("")}</ul>`;
+}
+function verdictBox(a){
+  if(!a) return "";
+  const k = (a.verdict||"").split(" ")[0];
+  return `<h3>Applicability check</h3><div class="verdict v-${esc(k)}"><div class="vtitle">${esc(a.verdict)}</div><div>${esc(a.why)}</div>
+    ${a.note ? `<div class="meta">ℹ ${esc(a.note)}</div>`:""}
+    ${a.caveat ? `<div class="meta">⚠ ${esc(a.caveat)}</div>`:""}
+    ${(a.rules||[]).length ? `<ul class="rules">${a.rules.map(r=>`<li>${esc(r)}</li>`).join("")}</ul>`:""}
+    ${evList(a.evidence)}</div>`;
+}
+function timeline(chain, cur){
+  if(!chain || chain.length < 2) return "";
+  return `<h3>Version history</h3><div class="timeline">${chain.map((v,i)=>`<div class="ver ${v.kind} ${v.doc===cur?"cur":""}"><b>v${i+1} · ${esc(v.kind)}</b>${esc(v.issue_date)} · ${esc(v.doc)}</div>`).join("")}</div>`;
+}
+function retrieval(r){
+  if(!r.retrieval) return "";
+  return `<details><summary>Retrieval ranking (why this document)</summary><table><tr><th>Doc</th><th>Docket</th><th>Score</th><th>Coverage</th><th>Subject</th></tr>
+  ${r.retrieval.map(x=>`<tr><td class="mono">${esc(x.doc)}</td><td class="mono">${esc(x.docket)}</td><td>${x.score}</td><td>${Math.round(x.coverage*100)}%</td><td>${esc(x.subject)}</td></tr>`).join("")}</table></details>`;
+}
+function compareBox(c){
+  if(!c) return "";
+  let h = "";
+  if(c.supersession){
+    const S = c.supersession;
+    h += `<h3>Superseded AD: before → after</h3><div class="cmp">
+      <div><div class="lab">Previously required by AD ${esc(S.old_ad)}</div>${evList(S.old) || '<div class="empty">Not stated in this document.</div>'}</div>
+      <div><div class="lab">This proposal would require</div>${evList(S.new) || '<div class="empty">Not stated in this document.</div>'}</div>
+      ${S.why && S.why.length ? `<div class="why"><div class="lab">Why it changed</div>${evList(S.why)}</div>`:""}
+    </div><div class="meta">${esc(S.note)}</div>`;
+  }
+  if(c.versions && c.versions.length > 1){
+    h += `<h3>What happened in each version</h3><ul class="vsteps">${c.versions.map(v=>`<li class="${esc(v.kind)}"><b>v${v.version} · ${esc(v.kind)} · ${esc(v.issue_date)}</b>${v.quote?`<p class="quote">“${esc(v.quote.text)}”</p>${citeBtn(v.quote.cite, v.quote.text)}`:""}</li>`).join("")}</ul>`;
+  }
+  return h;
+}
+// Results are grouped by legal status first; inside a group, a serial-number verdict decides the order.
+const GROUPS = [
+  {key:"final", label:"Final AD number recorded", tone:"ok", open:true},
+  {key:"open", label:"Open proposals", tone:"info", open:true},
+  {key:"withdrawn", label:"Withdrawn proposals (no action needed)", tone:"bad", open:false}];
+const VRANK = v => { v = (v || "").toUpperCase(); return v.startsWith("APPLIES") ? 0 : v.startsWith("DOES NOT") ? 2 : v ? 1 : 3; };
+function sbucket(x){
+  if(x.status === "WITHDRAWN" || (x.verdict || "").toUpperCase().startsWith("WITHDRAWN")) return "withdrawn";
+  return (x.final_ad || (x.status || "").startsWith("FINAL")) ? "final" : "open";
+}
+const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function ymd(s){ let m = /^(\d{4})-(\d{2})-(\d{2})/.exec(s || ""); if(m) return [+m[1], +m[2], +m[3]];
+  m = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(s || ""); return m ? [+m[3], +m[1], +m[2]] : null; }
+function fmtDate(s){ const d = ymd(s); return d ? `${d[2]} ${MONTHS[d[1]-1]} ${d[0]}` : (s || ""); }
+function isFuture(s){ const d = ymd(s); return d ? new Date(d[0], d[1]-1, d[2]) >= new Date(new Date().toDateString()) : false; }
+function statusLine(x, group){
+  if(group === "final") return `<b>Adopted as final AD ${esc(x.final_ad || "")}.</b>`;
+  if(group === "withdrawn") return `<b>Withdrawn.</b> No requirement results from this docket.`;
+  const due = x.comments_due ? (isFuture(x.comments_due) ? `Comments due ${fmtDate(x.comments_due)}.` : `Comment period closed ${fmtDate(x.comments_due)}; no final AD number is recorded in this dataset.`) : "Comment deadline not stated in the indexed text.";
+  const sup = x.supersedes && x.supersedes.length ? ` Would supersede AD ${esc(x.supersedes.join(", "))}.` : "";
+  return `<b>Not in effect.</b> ${esc(due)}${sup}`;
+}
+let fid = 0;
+function folders(items, opts = {}){
+  const by = {}; items.forEach(x => (by[sbucket(x)] = by[sbucket(x)] || []).push(x));
+  Object.values(by).forEach(arr => arr.sort((a, b) => VRANK(a.verdict) - VRANK(b.verdict)));
+  const id = "fold" + (++fid);
+  const live = items.filter(x => sbucket(x) !== "withdrawn" && x.verdict);
+  const vc = k => live.filter(x => VRANK(x.verdict) === k).length;
+  let h = `<div class="confnote">Results are arranged in order of confidence, from highest to lowest: final AD number recorded, then proposals and revised proposals, then withdrawn proposals.</div><div class="fcounts"><span class="ftotal"><b>${items.length}</b>${opts.totalLabel || "directives found"}</span>` +
+    GROUPS.map(g => `<button class="fchip f-${g.tone}" data-target="${id}-${g.key}" ${(by[g.key] || []).length ? "" : "disabled"}><b>${(by[g.key] || []).length}</b>${g.label.replace(" (no action needed)", "")}</button>`).join("") + `</div>`;
+  const shown = GROUPS.filter(g => (by[g.key] || []).length);
+  h += shown.map(g => `<details class="folder f-${g.tone}" id="${id}-${g.key}" ${g.open || shown.length === 1 ? "open" : ""}>
+    <summary><span><i class="dot"></i>${g.label}</span><span class="fcount">${by[g.key].length}</span></summary>
+    <div class="fbody">${by[g.key].map(x => itemCard(x, opts, g.key)).join("")}</div></details>`).join("");
+  return h;
+}
+const KIND = {proposal: "Proposal", supplemental: "Revised proposal", withdrawal: "Withdrawal"};
+function versionsBlock(x){
+  const vs = x.version_list || [];
+  if(vs.length < 2) return "";
+  return `<details class="vers"><summary>${vs.length} versions in this docket</summary><ol class="vlist">${vs.map(v => `
+    <li class="k-${esc(v.kind)}${v.current ? " cur" : ""}">
+      <div class="vh"><b>v${v.version} · ${esc(KIND[v.kind] || v.kind)}</b> · published ${esc(fmtDate(v.publish_date))} · <span class="mono">${esc(v.record_id)}</span>${v.current ? ` <span class="pill p-cur">CURRENT</span>` : ` <span class="vold">superseded by a later version</span>`}</div>
+      ${v.quote ? `<p class="vq">“${esc(v.quote.text)}”</p>${citeBtn(v.quote.cite, v.quote.text)}` : ""}
+    </li>`).join("")}</ol></details>`;
+}
+function itemCard(x, opts, group){
+  // Extra applicability detail only when it adds something to the coloured box
+  // (a serial-range result, an exclusion, or "cannot determine"), never the generic "applies to all".
+  const v = (x.verdict || "").toUpperCase();
+  const reason = x.verdict && x.verdict.includes(":") ? x.verdict.split(":").slice(1).join(":").trim() : "";
+  let extra = "";
+  if(group !== "withdrawn" && x.verdict && !/all serial numbers|all units/i.test(reason)){
+    const label = v.startsWith("DOES NOT") ? "Does not apply" : v.startsWith("APPLIES") ? "Applies" : v.startsWith("NEED") ? "Need the exact variant" : v.startsWith("DEPENDS") ? "Depends on serial number" : "Cannot be determined";
+    extra = ` <span class="iextra">${label}${reason ? ": " + esc(reason) : ""}</span>`;
+  }
+  const quote = x.what ? `<p class="ianswer">“${esc(x.what.text)}”</p>` : `<p class="ianswer muted">No “would require” sentence found in the indexed text.</p>`;
+  const data = opts.model ? ` data-model="${esc(opts.model)}" data-serial="${esc(opts.serial || "")}"` : "";
+  return `<div class="item"><div class="ihead"><b class="mono">${esc(x.docket)}</b> · ${esc(x.issue_date)} · ${esc(x.subject.replace(/^Airworthiness Directives;\s*/, ""))}</div>
+    ${quote}<div class="istatus s-${group}">${statusLine(x, group)}${extra}</div>
+    <div class="iactions">${x.what ? citeBtn(x.what.cite, x.what.text) : ""}<button class="pick" data-docket="${esc(x.docket)}"${data}>${opts.btn || "Open"}</button></div>
+    ${versionsBlock(x)}</div>`;
+}
+function headline(r){
+  const a = r.applicability || {}, v = (a.verdict || "").toUpperCase();
+  let tone = "info", title = "", sub = "";
+  if(r.status === "refuse"){ tone = "bad"; title = "No answer from this dataset"; sub = r.reason; }
+  else if(r.status === "clarify"){
+    const c = r.candidates || [], n = c.length;
+    const vs = c.map(x => (x.verdict || "").toUpperCase());
+    const wd = vs.filter(v => v.startsWith("WITHDRAWN")).length;
+    const ap = vs.filter(v => v.startsWith("APPLIES")).length;
+    const no = vs.filter(v => v.startsWith("DOES NOT")).length;
+    const un = vs.filter(v => v && !v.startsWith("WITHDRAWN") && !v.startsWith("APPLIES") && !v.startsWith("DOES NOT")).length;
+    if(n && wd === n){ tone = "bad"; title = `No action required: all ${n} matching proposals were withdrawn`;
+      sub = `${n} directives mention this aircraft, and every one of them ended in a withdrawal, so none of them requires anything. The list below shows what each would have meant before withdrawal.`; }
+    else if(ap || no || wd){ tone = ap ? "ok" : "warn";
+      const pl = (k, one, many) => `${k} ${k === 1 ? one : many}`;
+      title = ap ? `${ap} of ${n} matching directives would apply if adopted` : `None of the ${n} matching directives applies`;
+      sub = [ap && pl(ap, "would apply if adopted", "would apply if adopted"), no && pl(no, "does not apply", "do not apply"),
+             un && pl(un, "cannot be determined", "cannot be determined"), wd && pl(wd, "was withdrawn", "were withdrawn")].filter(Boolean).join(" · ") + ". Open one below to see its evidence."; }
+    else { tone = "warn"; title = "Several directives match. Choose one below."; sub = r.reason; }
+  }
+  else if(r.status === "partial"){ tone = "warn"; title = "That value is not stated in the document"; sub = r.reason; }
+  else if(r.status === "list"){
+    const wd = r.list.filter(x=>x.status==="WITHDRAWN").length;
+    tone = "info"; title = `${r.list.length} directive${r.list.length===1?"":"s"} mention ${r.list_scope}`;
+    sub = "";
+  }
+  else if(r.banner && r.banner.level === "critical"){
+    const last = (r.chain || []).slice(-1)[0] || {};
+    tone = "bad"; title = "No action required: this proposal was withdrawn";
+    sub = `Withdrawn on ${last.issue_date || "a later date"} (version ${(r.chain||[]).length} of ${(r.chain||[]).length} in this docket).`
+        + (a.why && a.why.includes("would have been") ? " " + a.why.replace("The proposal was withdrawn. ", "") : "")
+        + (r.banner.text.includes("'Current'") ? " Note: the spreadsheet's Status column wrongly labels this row 'Current'." : "");
+  }
+  else if(v.startsWith("APPLIES")){
+    tone = "ok";
+    title = v.includes("FINAL AD") ? "Yes, it applies. A final AD is recorded; confirm against it."
+          : v.includes("PART INSTALLED") ? "Yes, but only if the listed part is installed"
+          : "Yes, it would apply if this proposal is adopted";
+    sub = a.why + (a.note ? " " + a.note : "");
+  }
+  else if(v.startsWith("DOES NOT")){ tone = "no"; title = "No, it does not apply"; sub = a.why; }
+  else if(v.startsWith("CANNOT")){ tone = "warn"; title = "Can't be determined from the data"; sub = a.why; }
+  else if(v.startsWith("NEED")){ tone = "warn"; title = "Give the exact model variant"; sub = a.why; }
+  else if(v.startsWith("DEPENDS")){ tone = "warn"; title = "Depends on the serial number"; sub = a.why + " Enter it in the Serial no. box."; }
+  else { tone = "info"; title = "What this proposal would require"; sub = ""; }
+  const kq = r.key_quote;
+  const quote = kq ? `<div class="hq"><p class="quote">“${esc(kq.text)}”</p>${citeBtn(kq.cite, kq.text)}</div>` : "";
+  return `<div class="headline h-${tone}"><p class="ht">${esc(title)}</p>${sub?`<p class="hs">${esc(sub)}</p>`:""}${quote}</div>`;
+}
+let depth = 0;
+function backBtn(){ return depth > 0 ? `<button class="back" onclick="history.back()">← Back</button>` : ""; }
+window.addEventListener("popstate", e => {
+  const s = e.state; if(!s) return;
+  depth = s.depth || 0;
+  if(s.kind === "check"){ showTab("check"); $("#cm").value = s.model; $("#cs").value = s.serial || ""; doCheck(true); }
+  else { showTab(s.tab || "ask"); $("#q").value = s.q; $("#model").value = s.model || ""; $("#serial").value = s.serial || ""; run(undefined, true); }
+});
+function render(r){
+  const st = `<span class="status s-${r.status}">${({answer:"Answer",refuse:"Refused",clarify:"Needs clarification",partial:"Partial: value not in data",list:"List"})[r.status]}</span>`;
+  let h = `<div class="card">${backBtn()}<div>${st}</div>`;
+  if(r.status === "answer"){
+    const d = r.document;
+    h += `<h2>${esc(d.subject)}</h2><div class="meta mono">${esc(d.id)} · docket ${esc(d.docket)} · ${esc(d.fr_cite)} · published ${esc(d.publish_date || d.issue_date)}${d.body_source ? ` · text: ${esc(d.body_source)}` : " · text: summary only"} ${d.url?`· <a href="${esc(d.url)}" target="_blank" rel="noopener">Federal Register</a>`:""}</div>`;
+    h += headline(r);
+    if(r.data_issue) h += `<div class="banner b-warn">⚠ Data issue found: ${esc(r.data_issue)}</div>`;
+    if(r.banner && r.banner.level !== "critical") h += `<div class="banner b-${r.banner.level}">${esc(r.banner.text)}</div>`;
+    h += verdictBox(r.applicability);
+    if(r.ai_summary){ const a=r.ai_summary; h += a.error ? `<div class="meta">${esc(a.error)}</div>` : `<h3>Plain-English summary (AI, checked against quotes below)</h3><p style="margin:0">${esc(a.text)}</p><div class="meta">${a.kept} sentence(s) kept${a.dropped.length?`, ${a.dropped.length} dropped by verifier`:""} · ${esc(a.model)} · [E#] = quote numbers below</div>`; }
+    if(!(r.banner && r.banner.level==="critical")) h += `<h3>What the document says <span class="h3note">most relevant first</span></h3>` + (evList(r.evidence) || `<div class="empty">No matching sentences.</div>`);
+    h += compareBox(r.compare);
+    if(!(r.compare && r.compare.versions && r.compare.versions.length > 1)) h += timeline(r.chain, d.id);
+    if(r.note) h += `<div class="meta">${esc(r.note)}</div>`;
+  } else {
+    h += headline(r);
+    if(r.status === "partial"){ h += verdictBox(r.applicability) + `<h3>What the data does say</h3>` + evList(r.evidence); }
+    if(r.status === "list") h += folders(r.list, {totalLabel: `directives mention ${r.list_scope}`});
+    if(r.candidates) h += folders(r.candidates, {btn: "Use this docket", totalLabel: "matching directives", serial: (r.parsed || {}).serial});
+  }
+  h += `</div>`;
+  $("#out").innerHTML = h;
+}
+async function run(query, restoring){
+  if(typeof query === "string"){ $("#q").value = query; $("#model").value = ""; $("#serial").value = ""; }
+  if(!restoring){
+    if(depth === 0 && !history.state){ /* first view: nothing to go back to */ }
+    if(history.state || depth > 0 || window._hasView){ history.pushState({kind:"ask", q:$("#q").value, model:$("#model").value, serial:$("#serial").value, depth: depth + 1}, ""); depth++; }
+    else { history.replaceState({kind:"ask", q:$("#q").value, model:$("#model").value, serial:$("#serial").value, depth: 0}, ""); }
+    window._hasView = true;
+  }
+  const p = new URLSearchParams({q:$("#q").value, model:$("#model").value, serial:$("#serial").value});
+  document.body.classList.remove("landing");
+  $("#out").innerHTML = `<div class="card empty">Searching…</div>`;
+  const r = await (await fetch("/api/ask?"+p)).json();
+  render(r);
+}
+document.addEventListener("click", async e => {
+  const fc = e.target.closest(".fchip");
+  if(fc){ const d = document.getElementById(fc.dataset.target); if(d){ d.open = true; d.scrollIntoView({behavior: "smooth", block: "start"}); } return; }
+  const pick = e.target.closest(".pick");
+  if(pick && pick.dataset.model){ showTab("ask"); $("#q").value = `What does docket ${pick.dataset.docket} require?`; $("#model").value = pick.dataset.model; $("#serial").value = pick.dataset.serial; return run(); }
+  if(pick){ const base = $("#q").value.replace(/\b(FAA-\d{4}-\d+|\d{4}-[A-Z]{2,3}-\d+-AD)\b/g,"").replace(/^(which|list|all|show|find)\b.*$/i,"");
+    showTab("ask"); $("#q").value = `What does docket ${pick.dataset.docket} require? ${base}`.trim(); return run(); }
+  const b = e.target.closest(".cite"); if(!b) return;
+  // Show the cited paragraph right under the citation; click again to hide it.
+  const host = b.closest(".iactions") || b;
+  const open = host.nextElementSibling && host.nextElementSibling.classList.contains("srcpop") ? host.nextElementSibling : null;
+  if(open){ const same = open.dataset.cid === b.dataset.cid; open.remove(); if(same) return; }
+  const r = await (await fetch("/api/chunk?cid="+encodeURIComponent(b.dataset.cid))).json();
+  const d = r.doc, c = r.chunk, needle = b.dataset.text.replace(/\s+/g," ").trim();
+  const t = c.text.replace(/\s+/g," "), k = t.indexOf(needle);
+  const para = k >= 0 ? esc(t.slice(0,k)) + "<mark>" + esc(needle) + "</mark>" + esc(t.slice(k+needle.length)) : esc(t);
+  host.insertAdjacentHTML("afterend", `<div class="srcpop" data-cid="${esc(b.dataset.cid)}">
+    <div class="meta">${esc(c.section)} · docket ${esc(d.docket)} · ${esc(d.fr_cite)} ${d.url?`· <a href="${esc(d.url)}" target="_blank" rel="noopener">open original</a>`:""}</div>
+    <p>${para}</p></div>`);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,412 @@
+[
+ {
+  "id": "T01",
+  "cat": "topic",
+  "q": "787 leading edge outboard geared rotary actuator replacement with lockout actuator",
+  "gold_docket": "FAA-2026-2712"
+ },
+ {
+  "id": "T02",
+  "cat": "topic",
+  "q": "787 low range radio altimeter coaxial cables non-computed data",
+  "gold_docket": "FAA-2026-1335"
+ },
+ {
+  "id": "T03",
+  "cat": "topic",
+  "q": "737 video monitors detaching from passenger service unit rails, missing retention lanyards",
+  "gold_docket": "FAA-2025-0004"
+ },
+ {
+  "id": "T04",
+  "cat": "topic",
+  "q": "CH-47D forward transmission support beam fitting fatigue cracks",
+  "gold_docket": "FAA-2025-5394"
+ },
+ {
+  "id": "T05",
+  "cat": "topic",
+  "q": "A350 galley lower attachment studs fractured",
+  "gold_docket": "FAA-2026-2713"
+ },
+ {
+  "id": "T06",
+  "cat": "topic",
+  "q": "A320 family engine fire switch self-releasing causing uncommanded in-flight shutdown",
+  "gold_docket": "FAA-2026-8795"
+ },
+ {
+  "id": "T07",
+  "cat": "topic",
+  "q": "Bell 429 display units losing display, traffic system disabled, flight manual supplement",
+  "gold_docket": "FAA-2021-1078R1"
+ },
+ {
+  "id": "T08",
+  "cat": "topic",
+  "q": "Pratt & Whitney Canada automated damage tracking system under-counting low cycle fatigue",
+  "gold_docket": "FAA-2021-0103"
+ },
+ {
+  "id": "T09",
+  "cat": "topic",
+  "q": "rudder drive corrosion on BO-209 aircraft",
+  "gold_docket": "FAA-2026-8802"
+ },
+ {
+  "id": "T10",
+  "cat": "topic",
+  "q": "Dornier 228 hydraulic pump motor damaged by excessive heat",
+  "gold_docket": "FAA-2025-5401"
+ },
+ {
+  "id": "T11",
+  "cat": "topic",
+  "q": "Dauphin engine compartment firewall seal gaps angle brackets",
+  "gold_docket": "FAA-2026-11787"
+ },
+ {
+  "id": "T12",
+  "cat": "topic",
+  "q": "757-200 door 2 intercostals behind door stops and hinges inspection",
+  "gold_docket": "FAA-2003-16646"
+ },
+ {
+  "id": "T13",
+  "cat": "topic",
+  "q": "AE 3007A compressor cone shaft cyclic life limit increase",
+  "gold_docket": "99-NE-46"
+ },
+ {
+  "id": "T14",
+  "cat": "topic",
+  "q": "787 center wing fuel tank sealant side-of-body not cured during production",
+  "gold_docket": "FAA-2026-1322"
+ },
+ {
+  "id": "T15",
+  "cat": "topic",
+  "q": "AS350B3 main rotor servo-control upper ball bearing end tightening torque loss",
+  "gold_docket": "FAA-2026-11814"
+ },
+ {
+  "id": "T16",
+  "cat": "topic",
+  "q": "PW4077 HPC 15th stage disk ultrasonic scan inspection part number omitted",
+  "gold_docket": "FAA-2026-11811"
+ },
+ {
+  "id": "A01",
+  "cat": "applicability",
+  "q": "Does this apply to my DHC-8-400, S/N 4050?",
+  "gold_docket": "FAA-2005-20403",
+  "gold_verdict": "APPLIES",
+  "gold_not_contains": "ONLY WITH PART"
+ },
+ {
+  "id": "A02",
+  "cat": "applicability",
+  "q": "Does this apply to my DHC-8-400, S/N 4002?",
+  "gold_docket": "FAA-2005-20403",
+  "gold_verdict": "DOES NOT APPLY"
+ },
+ {
+  "id": "A03",
+  "cat": "applicability",
+  "q": "DHC-8-400 S/N 4001 horizontal stabilizer shims",
+  "gold_docket": "FAA-2005-20403",
+  "gold_verdict": "APPLIES",
+  "gold_not_contains": "ONLY WITH PART"
+ },
+ {
+  "id": "A04",
+  "cat": "applicability",
+  "q": "EMB-120 serial 120004 applicability",
+  "gold_docket": "FAA-2003-16645",
+  "gold_verdict": "APPLIES",
+  "gold_not_contains": "ONLY WITH PART"
+ },
+ {
+  "id": "A05",
+  "cat": "applicability",
+  "q": "EMB-120 serial 120400 applicability",
+  "gold_docket": "FAA-2003-16645",
+  "gold_verdict": "DOES NOT APPLY"
+ },
+ {
+  "id": "A06",
+  "cat": "applicability",
+  "q": "750XL serial number 115",
+  "gold_docket": "FAA-2006-24018",
+  "gold_verdict": "APPLIES",
+  "gold_not_contains": "ONLY WITH PART"
+ },
+ {
+  "id": "A07",
+  "cat": "applicability",
+  "q": "750XL serial number 125",
+  "gold_docket": "FAA-2006-24018",
+  "gold_verdict": "DOES NOT APPLY"
+ },
+ {
+  "id": "A08",
+  "cat": "applicability",
+  "q": "Reims F406 S/N F406-0091",
+  "gold_docket": "FAA-2006-26691",
+  "gold_verdict": "APPLIES",
+  "gold_not_contains": "ONLY WITH PART"
+ },
+ {
+  "id": "A09",
+  "cat": "applicability",
+  "q": "Reims F406 S/N F406-0090",
+  "gold_docket": "FAA-2006-26691",
+  "gold_verdict": "DOES NOT APPLY"
+ },
+ {
+  "id": "A10",
+  "cat": "applicability",
+  "q": "Piper PA-28-140 fuel selector valve S/N 28-100",
+  "gold_docket": "FAA-2013-0742",
+  "gold_verdict": "DOES NOT APPLY",
+  "note": "28-100 is in the PA-28-150/160/180 row of the table, not the PA-28-140 row. Expected to FAIL: ranges are not tied to table rows."
+ },
+ {
+  "id": "A11",
+  "cat": "applicability",
+  "q": "757-200 serial number 50 door 2 intercostals",
+  "gold_docket": "FAA-2003-16646",
+  "gold_verdict": "CANNOT DETERMINE",
+  "note": "Applicability is by line number, not serial number."
+ },
+ {
+  "id": "A12",
+  "cat": "applicability",
+  "q": "Hamilton Sundstrand 14SF-7 propeller auxiliary pump serial number 387",
+  "gold_docket": "FAA-2013-0056",
+  "gold_verdict": "DOES NOT APPLY",
+  "note": "387 is inside 366-710 but explicitly excluded (docket later withdrawn)."
+ },
+ {
+  "id": "A13",
+  "cat": "applicability",
+  "q": "Hamilton Sundstrand 14SF-7 propeller auxiliary pump serial number 388",
+  "gold_docket": "FAA-2013-0056",
+  "gold_verdict": "APPLIES",
+  "gold_not_contains": "ONLY WITH PART"
+ },
+ {
+  "id": "A14",
+  "cat": "applicability",
+  "q": "Sikorsky S-76B life raft deployment handle",
+  "gold_docket": "FAA-2011-0099",
+  "gold_verdict": "APPLIES",
+  "note": "Applies only with P/N ASI-700-45 installed.",
+  "gold_contains": "ONLY WITH PART INSTALLED"
+ },
+ {
+  "id": "A15",
+  "cat": "applicability",
+  "q": "Hamilton Sundstrand 14SF-7 propeller auxiliary pump serial number 96",
+  "gold_docket": "FAA-2013-0056",
+  "gold_verdict": "APPLIES",
+  "note": "Range starts at a one-digit serial: '1 through 365'."
+ },
+ {
+  "id": "A16",
+  "cat": "applicability",
+  "q": "Hamilton Sundstrand 14SF-7 propeller auxiliary pump serial number 95",
+  "gold_docket": "FAA-2013-0056",
+  "gold_verdict": "DOES NOT APPLY",
+  "note": "95 is excluded from 1-365."
+ },
+ {
+  "id": "A17",
+  "cat": "applicability",
+  "q": "AS350B3 serial 1234 servo-control upper ball bearing torque",
+  "gold_docket": "FAA-2026-11814",
+  "gold_verdict": "APPLIES",
+  "gold_note_contains": "No serial numbers are mentioned",
+  "note": "Team rule: no serial numbers in the directive -> applies to all serial numbers, with a comment."
+ },
+ {
+  "id": "A18",
+  "cat": "applicability",
+  "q": "PW4077 HPC 15th stage disk serial P-727001",
+  "gold_docket": "FAA-2026-11811",
+  "gold_verdict": "CANNOT DETERMINE",
+  "note": "Text mentions 'certain serial numbers' without listing them: refuse rather than guess."
+ },
+ {
+  "id": "V01",
+  "cat": "revision",
+  "q": "What does docket 2000-NM-120-AD require for the EMB-120?",
+  "gold_docket": "2000-NM-120-AD",
+  "gold_status": "WITHDRAWN"
+ },
+ {
+  "id": "V02",
+  "cat": "revision",
+  "q": "Robinson R22 droop and teeter stop bracket replacement",
+  "gold_docket": "FAA-2005-21679",
+  "gold_status": "WITHDRAWN"
+ },
+ {
+  "id": "V03",
+  "cat": "revision",
+  "q": "Gulfstream G150 serial number 210",
+  "gold_docket": "FAA-2009-1028",
+  "gold_status": "WITHDRAWN"
+ },
+ {
+  "id": "V04",
+  "cat": "revision",
+  "q": "CL-604 serial number 5400",
+  "gold_docket": "FAA-2004-19563",
+  "gold_status": "WITHDRAWN"
+ },
+ {
+  "id": "V05",
+  "cat": "revision",
+  "q": "Bell UH-1H type certificate holder names update and additional military helicopter models",
+  "gold_docket": "2002-SW-31-AD",
+  "gold_status": "ANY"
+ },
+ {
+  "id": "V06",
+  "cat": "revision",
+  "q": "What is the latest version of docket FAA-2006-23739?",
+  "gold_docket": "FAA-2006-23739",
+  "gold_status": "WITHDRAWN",
+  "note": "Answer key corrected during testing: row 315 looked like a revision, but its hidden full text is a withdrawal (its Summary column holds text from an unrelated FAA document)."
+ },
+ {
+  "id": "V07",
+  "cat": "revision",
+  "q": "787 leading edge outboard geared rotary actuator replacement with lockout actuator",
+  "gold_docket": "FAA-2026-2712",
+  "gold_status": "FINAL"
+ },
+ {
+  "id": "R01",
+  "cat": "refuse",
+  "q": "Are there any ADs for the Airbus A350-1000 cabin oxygen system?",
+  "gold_status": "refuse",
+  "note": "A350-1000 not in dataset (it lists A350-1041)."
+ },
+ {
+  "id": "R02",
+  "cat": "refuse",
+  "q": "What does docket FAA-2099-9999 require?",
+  "gold_status": "refuse"
+ },
+ {
+  "id": "R03",
+  "cat": "refuse",
+  "q": "What does AD 2031-01-01 require?",
+  "gold_status": "refuse"
+ },
+ {
+  "id": "R04",
+  "cat": "refuse",
+  "q": "What is the torque value for the main rotor servo-control upper ball bearing nut on AS350B3?",
+  "gold_status": "partial",
+  "note": "Topic exists, value is not in the data."
+ },
+ {
+  "id": "R05",
+  "cat": "refuse",
+  "q": "best pizza in Singapore",
+  "gold_status": "refuse"
+ },
+ {
+  "id": "R06",
+  "cat": "refuse",
+  "q": "Cessna 172 seat rail inspection",
+  "gold_status": "refuse",
+  "note": "No Cessna 172 seat-rail document in this dataset."
+ },
+ {
+  "id": "R07",
+  "cat": "refuse",
+  "q": "How many flight hours between inspections for the ATR 72 propeller blades?",
+  "gold_status": "refuse"
+ },
+ {
+  "id": "R08",
+  "cat": "refuse",
+  "q": "Boeing 787 inspection",
+  "gold_status": "clarify",
+  "note": "Too vague: several 787 dockets."
+ },
+ {
+  "id": "R09",
+  "cat": "refuse",
+  "q": "Tesla Model 3 battery recall",
+  "gold_status": "refuse"
+ },
+ {
+  "id": "R10",
+  "cat": "refuse",
+  "q": "Embraer 190 wing spar corrosion",
+  "gold_status": "refuse",
+  "note": "No ERJ-190 wing spar document in the dataset."
+ },
+ {
+  "id": "I01",
+  "cat": "identifier",
+  "q": "Summarise docket FAA-2026-2713",
+  "gold_docket": "FAA-2026-2713"
+ },
+ {
+  "id": "I02",
+  "cat": "identifier",
+  "q": "Which proposal supersedes AD 2026-09-02?",
+  "gold_docket": "FAA-2026-11811"
+ },
+ {
+  "id": "I03",
+  "cat": "identifier",
+  "q": "FAA-2025-5394",
+  "gold_docket": "FAA-2025-5394"
+ },
+ {
+  "id": "L01",
+  "cat": "list",
+  "q": "Which airworthiness directives concern PW4077 engines?",
+  "gold_docket": "FAA-2026-11811",
+  "min_rows": 1
+ },
+ {
+  "id": "L02",
+  "cat": "list",
+  "q": "List all ADs for the 737-800",
+  "gold_docket": "FAA-2026-3868",
+  "min_rows": 10
+ },
+ {
+  "id": "L03",
+  "cat": "list",
+  "q": "Which proposals affect CF6-80C2 engines?",
+  "gold_docket": "FAA-2007-0242",
+  "min_rows": 2
+ },
+ {
+  "id": "C01",
+  "cat": "compare",
+  "q": "Which proposal supersedes AD 2026-09-02?",
+  "gold_docket": "FAA-2026-11811"
+ },
+ {
+  "id": "C02",
+  "cat": "compare",
+  "q": "A330 radio management panel data synchronization AFM revision",
+  "gold_docket": "FAA-2026-11813"
+ },
+ {
+  "id": "C03",
+  "cat": "compare",
+  "q": "AW169 airworthiness limitations section incorrect material referenced",
+  "gold_docket": "FAA-2026-11808"
+ }
+]

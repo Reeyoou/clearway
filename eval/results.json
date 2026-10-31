@@ -1,0 +1,1082 @@
+[
+  {
+    "id": "T01",
+    "cat": "topic",
+    "q": "787 leading edge outboard geared rotary actuator replacement with lockout actuator",
+    "engine_ok": true,
+    "engine": "correct document",
+    "baseline_ok": true,
+    "baseline": "correct document",
+    "status": "answer",
+    "latency_ms": 12.8,
+    "hit5": true,
+    "verified": {
+      "sentences": 8,
+      "verified": 8,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "T02",
+    "cat": "topic",
+    "q": "787 low range radio altimeter coaxial cables non-computed data",
+    "engine_ok": true,
+    "engine": "correct document",
+    "baseline_ok": true,
+    "baseline": "correct document",
+    "status": "answer",
+    "latency_ms": 9.1,
+    "hit5": true,
+    "verified": {
+      "sentences": 5,
+      "verified": 5,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "T03",
+    "cat": "topic",
+    "q": "737 video monitors detaching from passenger service unit rails, missing retention lanyards",
+    "engine_ok": true,
+    "engine": "correct document",
+    "baseline_ok": true,
+    "baseline": "correct document",
+    "status": "answer",
+    "latency_ms": 9.3,
+    "hit5": true,
+    "verified": {
+      "sentences": 5,
+      "verified": 5,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "T04",
+    "cat": "topic",
+    "q": "CH-47D forward transmission support beam fitting fatigue cracks",
+    "engine_ok": true,
+    "engine": "correct document",
+    "baseline_ok": true,
+    "baseline": "correct document",
+    "status": "answer",
+    "latency_ms": 9.4,
+    "hit5": true,
+    "verified": {
+      "sentences": 7,
+      "verified": 7,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "T05",
+    "cat": "topic",
+    "q": "A350 galley lower attachment studs fractured",
+    "engine_ok": true,
+    "engine": "correct document",
+    "baseline_ok": true,
+    "baseline": "correct document",
+    "status": "answer",
+    "latency_ms": 9.1,
+    "hit5": true,
+    "verified": {
+      "sentences": 5,
+      "verified": 5,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "T06",
+    "cat": "topic",
+    "q": "A320 family engine fire switch self-releasing causing uncommanded in-flight shutdown",
+    "engine_ok": true,
+    "engine": "correct document",
+    "baseline_ok": true,
+    "baseline": "correct document",
+    "status": "answer",
+    "latency_ms": 9.2,
+    "hit5": true,
+    "verified": {
+      "sentences": 5,
+      "verified": 5,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "T07",
+    "cat": "topic",
+    "q": "Bell 429 display units losing display, traffic system disabled, flight manual supplement",
+    "engine_ok": true,
+    "engine": "correct document",
+    "baseline_ok": true,
+    "baseline": "correct document",
+    "status": "answer",
+    "latency_ms": 9.5,
+    "hit5": true,
+    "verified": {
+      "sentences": 5,
+      "verified": 5,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "T08",
+    "cat": "topic",
+    "q": "Pratt & Whitney Canada automated damage tracking system under-counting low cycle fatigue",
+    "engine_ok": true,
+    "engine": "correct document",
+    "baseline_ok": true,
+    "baseline": "correct document",
+    "status": "answer",
+    "latency_ms": 9.1,
+    "hit5": true,
+    "verified": {
+      "sentences": 4,
+      "verified": 4,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "T09",
+    "cat": "topic",
+    "q": "rudder drive corrosion on BO-209 aircraft",
+    "engine_ok": true,
+    "engine": "correct document",
+    "baseline_ok": true,
+    "baseline": "correct document",
+    "status": "answer",
+    "latency_ms": 9.0,
+    "hit5": true,
+    "verified": {
+      "sentences": 5,
+      "verified": 5,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "T10",
+    "cat": "topic",
+    "q": "Dornier 228 hydraulic pump motor damaged by excessive heat",
+    "engine_ok": true,
+    "engine": "correct document",
+    "baseline_ok": true,
+    "baseline": "correct document",
+    "status": "answer",
+    "latency_ms": 9.0,
+    "hit5": true,
+    "verified": {
+      "sentences": 5,
+      "verified": 5,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "T11",
+    "cat": "topic",
+    "q": "Dauphin engine compartment firewall seal gaps angle brackets",
+    "engine_ok": true,
+    "engine": "correct document",
+    "baseline_ok": true,
+    "baseline": "correct document",
+    "status": "answer",
+    "latency_ms": 8.5,
+    "hit5": true,
+    "verified": {
+      "sentences": 4,
+      "verified": 4,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "T12",
+    "cat": "topic",
+    "q": "757-200 door 2 intercostals behind door stops and hinges inspection",
+    "engine_ok": true,
+    "engine": "correct document",
+    "baseline_ok": true,
+    "baseline": "correct document",
+    "status": "answer",
+    "latency_ms": 9.6,
+    "hit5": true,
+    "verified": {
+      "sentences": 5,
+      "verified": 5,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "T13",
+    "cat": "topic",
+    "q": "AE 3007A compressor cone shaft cyclic life limit increase",
+    "engine_ok": true,
+    "engine": "correct document",
+    "baseline_ok": true,
+    "baseline": "correct document",
+    "status": "answer",
+    "latency_ms": 10.9,
+    "hit5": true,
+    "verified": {
+      "sentences": 5,
+      "verified": 5,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "T14",
+    "cat": "topic",
+    "q": "787 center wing fuel tank sealant side-of-body not cured during production",
+    "engine_ok": true,
+    "engine": "correct document",
+    "baseline_ok": true,
+    "baseline": "correct document",
+    "status": "answer",
+    "latency_ms": 9.7,
+    "hit5": true,
+    "verified": {
+      "sentences": 5,
+      "verified": 5,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "T15",
+    "cat": "topic",
+    "q": "AS350B3 main rotor servo-control upper ball bearing end tightening torque loss",
+    "engine_ok": true,
+    "engine": "correct document",
+    "baseline_ok": true,
+    "baseline": "correct document",
+    "status": "answer",
+    "latency_ms": 9.2,
+    "hit5": true,
+    "verified": {
+      "sentences": 5,
+      "verified": 5,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "T16",
+    "cat": "topic",
+    "q": "PW4077 HPC 15th stage disk ultrasonic scan inspection part number omitted",
+    "engine_ok": true,
+    "engine": "correct document",
+    "baseline_ok": true,
+    "baseline": "correct document",
+    "status": "answer",
+    "latency_ms": 10.4,
+    "hit5": true,
+    "verified": {
+      "sentences": 8,
+      "verified": 8,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "A01",
+    "cat": "applicability",
+    "q": "Does this apply to my DHC-8-400, S/N 4050?",
+    "engine_ok": true,
+    "engine": "APPLIES IF ADOPTED",
+    "baseline_ok": true,
+    "baseline": "APPLIES",
+    "status": "answer",
+    "latency_ms": 10.4,
+    "hit5": true,
+    "verified": {
+      "sentences": 5,
+      "verified": 5,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "A02",
+    "cat": "applicability",
+    "q": "Does this apply to my DHC-8-400, S/N 4002?",
+    "engine_ok": true,
+    "engine": "DOES NOT APPLY",
+    "baseline_ok": false,
+    "baseline": "APPLIES",
+    "status": "answer",
+    "latency_ms": 9.5,
+    "hit5": true,
+    "verified": {
+      "sentences": 5,
+      "verified": 5,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "A03",
+    "cat": "applicability",
+    "q": "DHC-8-400 S/N 4001 horizontal stabilizer shims",
+    "engine_ok": true,
+    "engine": "APPLIES IF ADOPTED",
+    "baseline_ok": true,
+    "baseline": "APPLIES",
+    "status": "answer",
+    "latency_ms": 10.0,
+    "hit5": true,
+    "verified": {
+      "sentences": 5,
+      "verified": 5,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "A04",
+    "cat": "applicability",
+    "q": "EMB-120 serial 120004 applicability",
+    "engine_ok": true,
+    "engine": "clarified; per-candidate verdict correct (APPLIES IF ADOPTED: S/N 120004 is listed\u2026)",
+    "baseline_ok": true,
+    "baseline": "APPLIES",
+    "status": "clarify",
+    "latency_ms": 9.8,
+    "hit5": true,
+    "verified": {
+      "sentences": 4,
+      "verified": 4,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "A05",
+    "cat": "applicability",
+    "q": "EMB-120 serial 120400 applicability",
+    "engine_ok": true,
+    "engine": "clarified; per-candidate verdict correct (DOES NOT APPLY: S/N 120400 is outside ev\u2026)",
+    "baseline_ok": false,
+    "baseline": "wrong document 2000-NM-120-AD",
+    "status": "clarify",
+    "latency_ms": 9.5,
+    "hit5": true,
+    "verified": {
+      "sentences": 4,
+      "verified": 4,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "A06",
+    "cat": "applicability",
+    "q": "750XL serial number 115",
+    "engine_ok": true,
+    "engine": "APPLIES IF ADOPTED",
+    "baseline_ok": true,
+    "baseline": "APPLIES",
+    "status": "answer",
+    "latency_ms": 10.2,
+    "hit5": true,
+    "verified": {
+      "sentences": 5,
+      "verified": 5,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "A07",
+    "cat": "applicability",
+    "q": "750XL serial number 125",
+    "engine_ok": true,
+    "engine": "DOES NOT APPLY",
+    "baseline_ok": false,
+    "baseline": "APPLIES",
+    "status": "answer",
+    "latency_ms": 10.3,
+    "hit5": true,
+    "verified": {
+      "sentences": 5,
+      "verified": 5,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "A08",
+    "cat": "applicability",
+    "q": "Reims F406 S/N F406-0091",
+    "engine_ok": true,
+    "engine": "APPLIES IF ADOPTED",
+    "baseline_ok": true,
+    "baseline": "APPLIES",
+    "status": "answer",
+    "latency_ms": 9.3,
+    "hit5": true,
+    "verified": {
+      "sentences": 5,
+      "verified": 5,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "A09",
+    "cat": "applicability",
+    "q": "Reims F406 S/N F406-0090",
+    "engine_ok": true,
+    "engine": "DOES NOT APPLY",
+    "baseline_ok": false,
+    "baseline": "APPLIES",
+    "status": "answer",
+    "latency_ms": 9.3,
+    "hit5": true,
+    "verified": {
+      "sentences": 5,
+      "verified": 5,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "A10",
+    "cat": "applicability",
+    "q": "Piper PA-28-140 fuel selector valve S/N 28-100",
+    "engine_ok": false,
+    "engine": "NOT REQUIRED (WITHDRAWN)",
+    "baseline_ok": false,
+    "baseline": "APPLIES",
+    "status": "answer",
+    "latency_ms": 10.8,
+    "hit5": true,
+    "verified": {
+      "sentences": 8,
+      "verified": 8,
+      "all_verified": true
+    },
+    "note": "28-100 is in the PA-28-150/160/180 row of the table, not the PA-28-140 row. Expected to FAIL: ranges are not tied to table rows."
+  },
+  {
+    "id": "A11",
+    "cat": "applicability",
+    "q": "757-200 serial number 50 door 2 intercostals",
+    "engine_ok": true,
+    "engine": "CANNOT DETERMINE",
+    "baseline_ok": false,
+    "baseline": "APPLIES",
+    "status": "answer",
+    "latency_ms": 9.6,
+    "hit5": true,
+    "verified": {
+      "sentences": 5,
+      "verified": 5,
+      "all_verified": true
+    },
+    "note": "Applicability is by line number, not serial number."
+  },
+  {
+    "id": "A12",
+    "cat": "applicability",
+    "q": "Hamilton Sundstrand 14SF-7 propeller auxiliary pump serial number 387",
+    "engine_ok": true,
+    "engine": "NOT REQUIRED (WITHDRAWN)",
+    "baseline_ok": false,
+    "baseline": "APPLIES",
+    "status": "answer",
+    "latency_ms": 10.5,
+    "hit5": true,
+    "verified": {
+      "sentences": 9,
+      "verified": 9,
+      "all_verified": true
+    },
+    "note": "387 is inside 366-710 but explicitly excluded (docket later withdrawn)."
+  },
+  {
+    "id": "A13",
+    "cat": "applicability",
+    "q": "Hamilton Sundstrand 14SF-7 propeller auxiliary pump serial number 388",
+    "engine_ok": true,
+    "engine": "NOT REQUIRED (WITHDRAWN)",
+    "baseline_ok": true,
+    "baseline": "APPLIES",
+    "status": "answer",
+    "latency_ms": 10.4,
+    "hit5": true,
+    "verified": {
+      "sentences": 8,
+      "verified": 8,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "A14",
+    "cat": "applicability",
+    "q": "Sikorsky S-76B life raft deployment handle",
+    "engine_ok": true,
+    "engine": "APPLIES IF ADOPTED (ONLY WITH PART INSTALLED)",
+    "baseline_ok": false,
+    "baseline": "APPLIES",
+    "status": "answer",
+    "latency_ms": 10.2,
+    "hit5": true,
+    "verified": {
+      "sentences": 7,
+      "verified": 7,
+      "all_verified": true
+    },
+    "note": "Applies only with P/N ASI-700-45 installed."
+  },
+  {
+    "id": "A15",
+    "cat": "applicability",
+    "q": "Hamilton Sundstrand 14SF-7 propeller auxiliary pump serial number 96",
+    "engine_ok": true,
+    "engine": "NOT REQUIRED (WITHDRAWN)",
+    "baseline_ok": true,
+    "baseline": "APPLIES",
+    "status": "answer",
+    "latency_ms": 10.0,
+    "hit5": true,
+    "verified": {
+      "sentences": 8,
+      "verified": 8,
+      "all_verified": true
+    },
+    "note": "Range starts at a one-digit serial: '1 through 365'."
+  },
+  {
+    "id": "A16",
+    "cat": "applicability",
+    "q": "Hamilton Sundstrand 14SF-7 propeller auxiliary pump serial number 95",
+    "engine_ok": true,
+    "engine": "NOT REQUIRED (WITHDRAWN)",
+    "baseline_ok": false,
+    "baseline": "APPLIES",
+    "status": "answer",
+    "latency_ms": 9.8,
+    "hit5": true,
+    "verified": {
+      "sentences": 9,
+      "verified": 9,
+      "all_verified": true
+    },
+    "note": "95 is excluded from 1-365."
+  },
+  {
+    "id": "A17",
+    "cat": "applicability",
+    "q": "AS350B3 serial 1234 servo-control upper ball bearing torque",
+    "engine_ok": true,
+    "engine": "APPLIES IF ADOPTED",
+    "baseline_ok": false,
+    "baseline": "APPLIES",
+    "status": "answer",
+    "latency_ms": 9.0,
+    "hit5": true,
+    "verified": {
+      "sentences": 5,
+      "verified": 5,
+      "all_verified": true
+    },
+    "note": "Team rule: no serial numbers in the directive -> applies to all serial numbers, with a comment."
+  },
+  {
+    "id": "A18",
+    "cat": "applicability",
+    "q": "PW4077 HPC 15th stage disk serial P-727001",
+    "engine_ok": true,
+    "engine": "CANNOT DETERMINE",
+    "baseline_ok": false,
+    "baseline": "APPLIES",
+    "status": "answer",
+    "latency_ms": 9.8,
+    "hit5": true,
+    "verified": {
+      "sentences": 8,
+      "verified": 8,
+      "all_verified": true
+    },
+    "note": "Text mentions 'certain serial numbers' without listing them: refuse rather than guess."
+  },
+  {
+    "id": "V01",
+    "cat": "revision",
+    "q": "What does docket 2000-NM-120-AD require for the EMB-120?",
+    "engine_ok": true,
+    "engine": "flagged withdrawn",
+    "baseline_ok": true,
+    "baseline": "flagged withdrawn",
+    "status": "answer",
+    "latency_ms": 10.4,
+    "hit5": true,
+    "verified": {
+      "sentences": 9,
+      "verified": 9,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "V02",
+    "cat": "revision",
+    "q": "Robinson R22 droop and teeter stop bracket replacement",
+    "engine_ok": true,
+    "engine": "flagged withdrawn",
+    "baseline_ok": false,
+    "baseline": "withdrawal NOT flagged",
+    "status": "answer",
+    "latency_ms": 9.6,
+    "hit5": true,
+    "verified": {
+      "sentences": 8,
+      "verified": 8,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "V03",
+    "cat": "revision",
+    "q": "Gulfstream G150 serial number 210",
+    "engine_ok": true,
+    "engine": "flagged withdrawn",
+    "baseline_ok": false,
+    "baseline": "withdrawal NOT flagged",
+    "status": "answer",
+    "latency_ms": 10.4,
+    "hit5": true,
+    "verified": {
+      "sentences": 8,
+      "verified": 8,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "V04",
+    "cat": "revision",
+    "q": "CL-604 serial number 5400",
+    "engine_ok": true,
+    "engine": "flagged withdrawn",
+    "baseline_ok": false,
+    "baseline": "withdrawal NOT flagged",
+    "status": "answer",
+    "latency_ms": 15.7,
+    "hit5": true,
+    "verified": {
+      "sentences": 8,
+      "verified": 8,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "V05",
+    "cat": "revision",
+    "q": "Bell UH-1H type certificate holder names update and additional military helicopter models",
+    "engine_ok": true,
+    "engine": "correct document",
+    "baseline_ok": true,
+    "baseline": "correct document",
+    "status": "answer",
+    "latency_ms": 16.3,
+    "hit5": true,
+    "verified": {
+      "sentences": 5,
+      "verified": 5,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "V06",
+    "cat": "revision",
+    "q": "What is the latest version of docket FAA-2006-23739?",
+    "engine_ok": true,
+    "engine": "flagged withdrawn",
+    "baseline_ok": true,
+    "baseline": "flagged withdrawn",
+    "status": "answer",
+    "latency_ms": 15.3,
+    "hit5": true,
+    "verified": {
+      "sentences": 7,
+      "verified": 7,
+      "all_verified": true
+    },
+    "note": "Answer key corrected during testing: row 315 looked like a revision, but its hidden full text is a withdrawal (its Summary column holds text from an unrelated FAA document)."
+  },
+  {
+    "id": "V07",
+    "cat": "revision",
+    "q": "787 leading edge outboard geared rotary actuator replacement with lockout actuator",
+    "engine_ok": true,
+    "engine": "final AD number flagged",
+    "baseline_ok": false,
+    "baseline": "final AD number NOT flagged",
+    "status": "answer",
+    "latency_ms": 16.2,
+    "hit5": true,
+    "verified": {
+      "sentences": 8,
+      "verified": 8,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "R01",
+    "cat": "refuse",
+    "q": "Are there any ADs for the Airbus A350-1000 cabin oxygen system?",
+    "engine_ok": true,
+    "engine": "refuse",
+    "baseline_ok": false,
+    "baseline": "answer",
+    "status": "refuse",
+    "latency_ms": 11.4,
+    "hit5": null,
+    "verified": {
+      "sentences": 0,
+      "verified": 0,
+      "all_verified": true
+    },
+    "note": "A350-1000 not in dataset (it lists A350-1041)."
+  },
+  {
+    "id": "R02",
+    "cat": "refuse",
+    "q": "What does docket FAA-2099-9999 require?",
+    "engine_ok": true,
+    "engine": "refuse",
+    "baseline_ok": false,
+    "baseline": "answer",
+    "status": "refuse",
+    "latency_ms": 9.2,
+    "hit5": null,
+    "verified": {
+      "sentences": 0,
+      "verified": 0,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "R03",
+    "cat": "refuse",
+    "q": "What does AD 2031-01-01 require?",
+    "engine_ok": true,
+    "engine": "refuse",
+    "baseline_ok": false,
+    "baseline": "answer",
+    "status": "refuse",
+    "latency_ms": 9.4,
+    "hit5": null,
+    "verified": {
+      "sentences": 0,
+      "verified": 0,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "R04",
+    "cat": "refuse",
+    "q": "What is the torque value for the main rotor servo-control upper ball bearing nut on AS350B3?",
+    "engine_ok": true,
+    "engine": "partial",
+    "baseline_ok": false,
+    "baseline": "answer",
+    "status": "partial",
+    "latency_ms": 10.2,
+    "hit5": null,
+    "verified": {
+      "sentences": 5,
+      "verified": 5,
+      "all_verified": true
+    },
+    "note": "Topic exists, value is not in the data."
+  },
+  {
+    "id": "R05",
+    "cat": "refuse",
+    "q": "best pizza in Singapore",
+    "engine_ok": true,
+    "engine": "refuse",
+    "baseline_ok": false,
+    "baseline": "answer",
+    "status": "refuse",
+    "latency_ms": 11.1,
+    "hit5": null,
+    "verified": {
+      "sentences": 0,
+      "verified": 0,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "R06",
+    "cat": "refuse",
+    "q": "Cessna 172 seat rail inspection",
+    "engine_ok": true,
+    "engine": "refuse",
+    "baseline_ok": false,
+    "baseline": "answer",
+    "status": "refuse",
+    "latency_ms": 9.3,
+    "hit5": null,
+    "verified": {
+      "sentences": 0,
+      "verified": 0,
+      "all_verified": true
+    },
+    "note": "No Cessna 172 seat-rail document in this dataset."
+  },
+  {
+    "id": "R07",
+    "cat": "refuse",
+    "q": "How many flight hours between inspections for the ATR 72 propeller blades?",
+    "engine_ok": true,
+    "engine": "refuse",
+    "baseline_ok": false,
+    "baseline": "answer",
+    "status": "refuse",
+    "latency_ms": 10.2,
+    "hit5": null,
+    "verified": {
+      "sentences": 0,
+      "verified": 0,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "R08",
+    "cat": "refuse",
+    "q": "Boeing 787 inspection",
+    "engine_ok": true,
+    "engine": "clarify",
+    "baseline_ok": false,
+    "baseline": "answer",
+    "status": "clarify",
+    "latency_ms": 9.9,
+    "hit5": null,
+    "verified": {
+      "sentences": 0,
+      "verified": 0,
+      "all_verified": true
+    },
+    "note": "Too vague: several 787 dockets."
+  },
+  {
+    "id": "R09",
+    "cat": "refuse",
+    "q": "Tesla Model 3 battery recall",
+    "engine_ok": true,
+    "engine": "clarify",
+    "baseline_ok": false,
+    "baseline": "answer",
+    "status": "clarify",
+    "latency_ms": 10.3,
+    "hit5": null,
+    "verified": {
+      "sentences": 10,
+      "verified": 10,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "R10",
+    "cat": "refuse",
+    "q": "Embraer 190 wing spar corrosion",
+    "engine_ok": true,
+    "engine": "refuse",
+    "baseline_ok": false,
+    "baseline": "answer",
+    "status": "refuse",
+    "latency_ms": 10.3,
+    "hit5": null,
+    "verified": {
+      "sentences": 0,
+      "verified": 0,
+      "all_verified": true
+    },
+    "note": "No ERJ-190 wing spar document in the dataset."
+  },
+  {
+    "id": "I01",
+    "cat": "identifier",
+    "q": "Summarise docket FAA-2026-2713",
+    "engine_ok": true,
+    "engine": "correct document",
+    "baseline_ok": false,
+    "baseline": "answer: got FAA-2026-11800",
+    "status": "answer",
+    "latency_ms": 9.2,
+    "hit5": true,
+    "verified": {
+      "sentences": 4,
+      "verified": 4,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "I02",
+    "cat": "identifier",
+    "q": "Which proposal supersedes AD 2026-09-02?",
+    "engine_ok": true,
+    "engine": "correct document",
+    "baseline_ok": true,
+    "baseline": "correct document",
+    "status": "answer",
+    "latency_ms": 9.5,
+    "hit5": true,
+    "verified": {
+      "sentences": 7,
+      "verified": 7,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "I03",
+    "cat": "identifier",
+    "q": "FAA-2025-5394",
+    "engine_ok": true,
+    "engine": "correct document",
+    "baseline_ok": false,
+    "baseline": "answer: got FAA-2026-8785",
+    "status": "answer",
+    "latency_ms": 9.3,
+    "hit5": true,
+    "verified": {
+      "sentences": 6,
+      "verified": 6,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "L01",
+    "cat": "list",
+    "q": "Which airworthiness directives concern PW4077 engines?",
+    "engine_ok": true,
+    "engine": "list: 1 dockets listed",
+    "baseline_ok": false,
+    "baseline": "baseline returns one document, not a list",
+    "status": "list",
+    "latency_ms": 11.5,
+    "hit5": true,
+    "verified": {
+      "sentences": 1,
+      "verified": 1,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "L02",
+    "cat": "list",
+    "q": "List all ADs for the 737-800",
+    "engine_ok": true,
+    "engine": "list: 19 dockets listed",
+    "baseline_ok": false,
+    "baseline": "baseline returns one document, not a list",
+    "status": "list",
+    "latency_ms": 12.3,
+    "hit5": true,
+    "verified": {
+      "sentences": 27,
+      "verified": 27,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "L03",
+    "cat": "list",
+    "q": "Which proposals affect CF6-80C2 engines?",
+    "engine_ok": true,
+    "engine": "list: 3 dockets listed",
+    "baseline_ok": false,
+    "baseline": "baseline returns one document, not a list",
+    "status": "list",
+    "latency_ms": 10.4,
+    "hit5": true,
+    "verified": {
+      "sentences": 7,
+      "verified": 7,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "C01",
+    "cat": "compare",
+    "q": "Which proposal supersedes AD 2026-09-02?",
+    "engine_ok": true,
+    "engine": "old AD 2026-09-02: before/why/after = 1/1/1",
+    "baseline_ok": false,
+    "baseline": "baseline has no before/after view",
+    "status": "answer",
+    "latency_ms": 10.2,
+    "hit5": true,
+    "verified": {
+      "sentences": 7,
+      "verified": 7,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "C02",
+    "cat": "compare",
+    "q": "A330 radio management panel data synchronization AFM revision",
+    "engine_ok": true,
+    "engine": "old AD 2025-09-07: before/why/after = 1/1/1",
+    "baseline_ok": false,
+    "baseline": "baseline has no before/after view",
+    "status": "answer",
+    "latency_ms": 11.3,
+    "hit5": true,
+    "verified": {
+      "sentences": 8,
+      "verified": 8,
+      "all_verified": true
+    },
+    "note": ""
+  },
+  {
+    "id": "C03",
+    "cat": "compare",
+    "q": "AW169 airworthiness limitations section incorrect material referenced",
+    "engine_ok": true,
+    "engine": "old AD 2024-05-06: before/why/after = 1/1/1",
+    "baseline_ok": false,
+    "baseline": "baseline has no before/after view",
+    "status": "answer",
+    "latency_ms": 14.6,
+    "hit5": true,
+    "verified": {
+      "sentences": 8,
+      "verified": 8,
+      "all_verified": true
+    },
+    "note": ""
+  }
+]
