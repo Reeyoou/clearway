@@ -40,6 +40,26 @@ ClearWay addresses these challenges through a retrieval and verification pipelin
 - **Source verification:** Return verbatim supporting excerpts with document references and page information.
 - **Uncertainty handling:** Refuse to provide definitive answers when evidence is insufficient, ambiguous or contradictory.
 
+## 🧪 Sample Queries & Expected Responses
+
+Examples based on the database as of **31 October 2026**.
+
+| Query | Expected response |
+|---|---|
+| Does any AD apply to Airbus Helicopters AS350B3, serial number 7800? | **Yes.** A current AD applies. |
+| Does this apply to my DHC-8-400, S/N 4050? | **Yes, if adopted.** The proposal applies to this aircraft, subject to adoption as a final AD. |
+| Does this apply to my DHC-8-400, S/N 4002? | **No.** The serial number is not included in the applicable docket. |
+| What does docket 2000-NM-120-AD require for the EMB-120? | **Withdrawn.** The proposal has been withdrawn and is no longer current. |
+| Are there any ADs for the Airbus A350-1000 cabin oxygen system? | **None found in the system.** No matching records were identified in the available dataset. |
+
+These examples demonstrate five possible response outcomes:
+
+1. **Applicable:** A current directive applies to the aircraft.
+2. **Conditionally applicable:** A proposal applies if adopted as a final AD.
+3. **Not applicable:** The aircraft does not meet the specified applicability criteria.
+4. **Withdrawn:** The relevant proposal is no longer active.
+5. **No matching records:** The system cannot identify a relevant directive in its available dataset.
+
 ## 📊 Dataset
 
 The project uses the provided Challenge #4 dataset:
@@ -76,9 +96,9 @@ clearway/
 
 The application is deployed on Vercel:
 
-**[https://clearway-acacia.vercel.app/](https://clearway-acacia.vercel.app/)**
+**[ClearWay](https://clearway-acacia.vercel.app/)**
 
-The repository includes a prebuilt `data/index.pkl`, so preprocessing is not required to run the hosted application.
+The repository includes a prebuilt `data/index.pkl`, so preprocessing is not required to use the hosted application.
 
 ### 1. Rebuilding the Backend Index
 
@@ -114,13 +134,9 @@ python -m preprocessing.eval.run_eval
 
 To run the application locally using the existing search index:
 
-**Start the backend**
-
 ```bash
 python app.py
 ```
-
-**Access the frontend**
 
 Open [http://localhost:8000](http://localhost:8000) in your browser.
 
