@@ -11,7 +11,6 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
 from .engine import Engine
-from .llm import summarise
 
 ROOT = Path(__file__).resolve().parent.parent
 STATIC = ROOT / "adtrace" / "static"
@@ -36,9 +35,6 @@ class H(BaseHTTPRequestHandler):
             return self._send(200, (STATIC / "index.html").read_bytes(), "text/html")
         if u.path == "/api/ask":
             r = ENGINE.ask(qs.get("q", ""), qs.get("model") or None, qs.get("serial") or None)
-            s = summarise(r)
-            if s:
-                r["ai_summary"] = s
             return self._send(200, json.dumps(r).encode())
         if u.path == "/api/check":
             return self._send(200, json.dumps(ENGINE.check(qs.get("model", "").strip(), qs.get("serial") or None)).encode())
