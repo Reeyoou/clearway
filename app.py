@@ -1,6 +1,6 @@
 """Demo server. Standard library only.
 
-Run:  python -m adtrace.app        then open http://localhost:8000
+Run:  python -m app.py        then open http://localhost:8000
 """
 from __future__ import annotations
 

@@ -30,18 +30,7 @@ SHEET = ROOT / "data" / "challenge4_ad_index.xlsx"
 OUT = ROOT / "data" / "fulltext"
 UA = {"User-Agent": "ADTrace hackathon prototype (Autonomous SG 2026)"}
 
-
-def _ssl_context():
-    """python.org builds of Python on macOS ship without root certificates.
-    Use certifi's bundle when available (pip install certifi), otherwise the system default."""
-    try:
-        import certifi
-        return ssl.create_default_context(cafile=certifi.where())
-    except Exception:
-        return ssl.create_default_context()
-
-
-SSL_CTX = _ssl_context()
+SSL_CTX = ssl.create_default_context()
 
 
 def get(url, timeout=40):
@@ -119,7 +108,7 @@ def main():
     if failures:
         (OUT / "_failures.txt").write_text("\n".join(failures), encoding="utf-8")
         print(f"failures listed in {OUT / '_failures.txt'}")
-    print("Next: python3 -m adtrace.ingest   (then restart the app)")
+    print("Next: python3 -m preprocessing.ingest   (then restart the app)")
 
 
 if __name__ == "__main__":

@@ -537,7 +537,6 @@ function render(r){
     if(r.data_issue) h += `<div class="banner b-warn">⚠ Data issue found: ${esc(r.data_issue)}</div>`;
     if(r.banner && r.banner.level !== "critical") h += `<div class="banner b-${r.banner.level}">${esc(r.banner.text)}</div>`;
     h += verdictBox(r.applicability);
-    if(r.ai_summary){ const a=r.ai_summary; h += a.error ? `<div class="meta">${esc(a.error)}</div>` : `<h3>Plain-English summary (AI, checked against quotes below)</h3><p style="margin:0">${esc(a.text)}</p><div class="meta">${a.kept} sentence(s) kept${a.dropped.length?`, ${a.dropped.length} dropped by verifier`:""} · ${esc(a.model)} · [E#] = quote numbers below</div>`; }
     if(!(r.banner && r.banner.level==="critical")) h += `<h3>What the document says <span class="h3note">most relevant first</span></h3>` + (evList(r.evidence) || `<div class="empty">No matching sentences.</div>`);
     h += compareBox(r.compare);
     if(!(r.compare && r.compare.versions && r.compare.versions.length > 1)) h += timeline(r.chain, d.id);

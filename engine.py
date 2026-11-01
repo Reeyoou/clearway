@@ -4,7 +4,6 @@ Design rule: code decides, text is quoted.
   * Retrieval, filtering, version logic and applicability are deterministic code.
   * Every answer sentence is a verbatim sentence from a source chunk, with its citation.
   * A verifier re-checks every sentence against its cited chunk before anything is shown.
-  * An LLM (optional, see llm.py) may only rephrase verified evidence; its output is verified the same way.
 """
 from __future__ import annotations
 
