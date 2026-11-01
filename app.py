@@ -10,10 +10,10 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
-from .engine import Engine
+from engine import Engine
 
-ROOT = Path(__file__).resolve().parent.parent
-STATIC = ROOT / "adtrace" / "static"
+ROOT = Path(__file__).resolve().parent
+STATIC = ROOT / "static"
 ENGINE = Engine()
 
 

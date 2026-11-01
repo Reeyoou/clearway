@@ -8,10 +8,9 @@ Sources (both public, no key):
   2. no link (older rows)    -> govinfo link service by volume + first page (e.g. /link/fr/70/54316)
 
 Run on a laptop with internet:
-    python3 -m pip install pandas openpyxl certifi
-    python3 fetch_fulltext.py              # everything not yet downloaded
-    python3 fetch_fulltext.py --limit 40   # try a few first
-    python3 -m adtrace.ingest              # rebuild the index with the full text
+    pip install -r preprocessing/requirements.txt
+    python3 preprocessing/fetch_fulltext.py      # everything not yet downloaded
+    python3 -m preprocessing.ingest              # rebuild the index with the full text
 Files go to data/fulltext/<record_id>.txt and are reused, so the demo then runs offline.
 """
 import argparse
@@ -26,7 +25,7 @@ from pathlib import Path
 
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 SHEET = ROOT / "data" / "challenge4_ad_index.xlsx"
 OUT = ROOT / "data" / "fulltext"
 UA = {"User-Agent": "ADTrace hackathon prototype (Autonomous SG 2026)"}

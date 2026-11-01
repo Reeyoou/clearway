@@ -4,7 +4,7 @@ import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 
-from adtrace.app import H  # noqa: E402
+from app import H  # noqa: E402
 
 
 class handler(H):

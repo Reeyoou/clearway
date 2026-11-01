@@ -9,7 +9,7 @@ No LLM is used anywhere in this file. Everything is deterministic and auditable:
     and whether applicability depends on an external service bulletin
   * splits text into citable chunks (doc, section, paragraph)
 
-Run:  python -m adtrace.ingest            (reads data/challenge4_ad_index.xlsx)
+Run:  python -m preprocessing.ingest            (reads data/challenge4_ad_index.xlsx)
 Writes data/index.pkl
 """
 from __future__ import annotations

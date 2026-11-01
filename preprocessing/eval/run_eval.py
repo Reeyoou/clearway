@@ -3,7 +3,7 @@
 Baseline = what a typical hackathon RAG does: BM25 over all chunks, take the top chunk's
 document, always answer. No equipment filter, no version logic, no applicability rules, no refusal.
 
-Run:  python -m eval.run_eval      (writes eval/results.md and eval/results.json)
+Run:  python -m preprocessing.eval.run_eval      (writes eval/results.md and eval/results.json)
 """
 from __future__ import annotations
 
@@ -14,11 +14,11 @@ import sys
 import time
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
-from adtrace.engine import Engine, tokenize  # noqa: E402
+from engine import Engine, tokenize  # noqa: E402
 
-Q = json.loads((ROOT / "eval" / "questions.json").read_text())
+Q = json.loads((ROOT / "preprocessing" / "eval" / "questions.json").read_text())
 
 
 def baseline(e: Engine, q: str) -> dict:
@@ -156,8 +156,8 @@ def main():
     md += [f"- **{x['id']}** `{x['q']}` → {x['engine']}" + (f"  \n  _{x['note']}_" if x["note"] else "") for x in fails] or ["- none"]
     md += ["", "## Per-question", "", "| ID | Question | This system | Baseline | ms |", "|---|---|---|---|---:|"]
     md += [f"| {x['id']} | {x['q']} | {'✅' if x['engine_ok'] else '❌'} {x['engine']} | {'✅' if x['baseline_ok'] else '❌'} {x['baseline']} | {x['latency_ms']:.0f} |" for x in rows]
-    (ROOT / "eval" / "results.md").write_text("\n".join(md) + "\n")
-    (ROOT / "eval" / "results.json").write_text(json.dumps(rows, indent=2))
+    (ROOT / "preprocessing" / "eval" / "results.md").write_text("\n".join(md) + "\n")
+    (ROOT / "preprocessing" / "eval" / "results.json").write_text(json.dumps(rows, indent=2))
     print("\n".join(md[:30]))
 
 

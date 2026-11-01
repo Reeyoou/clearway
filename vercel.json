@@ -2,10 +2,10 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
     "api/*.py": {
-      "includeFiles": "{adtrace/**,data/index.pkl}"
+      "includeFiles": "{app.py,engine.py,data/index.pkl}"
     }
   },
   "rewrites": [
-    { "source": "/", "destination": "/adtrace/static/index.html" }
+    { "source": "/", "destination": "/static/index.html" }
   ]
 }

@@ -15,7 +15,7 @@ import time
 from collections import Counter, defaultdict
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent
 
 STOP = set("""a an the of to for on in at by with and or is are was were be been do does did what which who whom whose
 when where why how this that these those there here my our your i we you me us it its any all some about tell show give
