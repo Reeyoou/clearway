@@ -18,7 +18,6 @@ python3 -m eval.run_eval          # re-runs the evaluation, writes eval/results.
 
 `fetch_fulltext.py` uses the `federal_register_link` (Federal Register API, raw text with `[[Page N]]` markers) and, for rows with no link, the govinfo link service by volume and page. It saves `data/fulltext/<record_id>.txt` so the demo then runs offline. The app works without it, but applicability then comes from summaries for most rows.
 
-Optional: `export ANTHROPIC_API_KEY=...` adds a verified plain-English summary (see "Where AI is used").
 
 ## Data source and corpus size
 
